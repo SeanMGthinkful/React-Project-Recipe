@@ -13,56 +13,56 @@ describe("App", () => {
       expect(container.querySelector('form[name="create" i]')).toBeTruthy();
     });
 
-    describe("create form contains", () => {
-      test('an <input name="name">', () => {
-        const { container } = render(<App />);
-        const name = container.querySelector(
-          'form[name="create" i] input[name="name" i]'
-        );
-        expect(name).toBeTruthy();
-      });
+      describe("create form contains", () => {
+        test('an <input name="name">', () => {
+          const { container } = render(<App />);
+          const name = container.querySelector(
+            'form[name="create" i] input[name="name" i]'
+          );
+          expect(name).toBeTruthy();
+        });
 
-      test('an <input name="cuisine">', () => {
-        const { container } = render(<App />);
-        const name = container.querySelector(
-          'form[name="create" i] input[name="cuisine" i]'
-        );
-        expect(name).toBeTruthy();
-      });
-      
-      test('an <input name="photo">', () => {
-        const { container } = render(<App />);
-        const name = container.querySelector(
-          'form[name="create" i] input[name="photo" i]'
-        );
-        expect(name).toBeTruthy();
-      });
-      
-      test('a <textarea name="ingredients">', () => {
-        const { container } = render(<App />);
-        const textArea = container.querySelector(
-          'form[name="create" i] textarea[name="ingredients" i]'
-        );
-        expect(textArea).toBeTruthy();
-      });
-      
-      test('a <textarea name="preparation">', () => {
-        const { container } = render(<App />);
-        const textArea = container.querySelector(
-          'form[name="create" i] textarea[name="preparation" i]'
-        );
-        expect(textArea).toBeTruthy();
-      });
-      
-      test('a <button type="submit">', () => {
-        const { container } = render(<App />);
-        const selectbutton = container.querySelector(
-          'form[name="create" i] button[type="submit" i]'
-        );
-        expect(selectbutton).toBeTruthy();
-      });
-    }); 
-  });
+        test('an <input name="cuisine">', () => {
+          const { container } = render(<App />);
+          const name = container.querySelector(
+            'form[name="create" i] input[name="cuisine" i]'
+          );
+          expect(name).toBeTruthy();
+        });
+        
+        test('an <input name="photo">', () => {
+          const { container } = render(<App />);
+          const name = container.querySelector(
+            'form[name="create" i] input[name="photo" i]'
+          );
+          expect(name).toBeTruthy();
+        });
+        
+        test('a <textarea name="ingredients">', () => {
+          const { container } = render(<App />);
+          const textArea = container.querySelector(
+            'form[name="create" i] textarea[name="ingredients" i]'
+          );
+          expect(textArea).toBeTruthy();
+        });
+        
+        test('a <textarea name="preparation">', () => {
+          const { container } = render(<App />);
+          const textArea = container.querySelector(
+            'form[name="create" i] textarea[name="preparation" i]'
+          );
+          expect(textArea).toBeTruthy();
+        });
+        
+        test('a <button type="submit">', () => {
+          const { container } = render(<App />);
+          const selectbutton = container.querySelector(
+            'form[name="create" i] button[type="submit" i]'
+          );
+          expect(selectbutton).toBeTruthy();
+        });
+      }); 
+    });
   
   describe("can create a new recipe that displays", () => {
 

@@ -2,11 +2,24 @@ import React, { useState } from "react";
 import "./App.css";
 import RecipeCreate from "./RecipeCreate";
 import RecipeList from "./RecipeList";
-import RecipeData from "./RecipeData"
+import RecipeData from "./RecipeData" 
+
 
 function App() {
   const [recipes, setRecipes] = useState(RecipeData);
 
+  const deleteRecipe = (recipeIndex) => {
+    console.log("recipe on delete recipe is", recipeIndex)
+    setRecipes((currentRecipe) => 
+    currentRecipe.filter((rec, index) => index !== recipeIndex)
+  );
+  }
+  const addRecipes = (newRecipe) => {
+    setRecipes((currentRecipe) => [
+      ...currentRecipe,
+      newRecipe,
+    ])
+  }
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
 
@@ -14,8 +27,8 @@ function App() {
   return (
     <div className="App">
       <header><h1>Delicious Food Recipes</h1></header>
-      <RecipeList />
-      <RecipeCreate />
+      <RecipeList recipes={recipes} deleteRecipeButton={deleteRecipe}/>
+      <RecipeCreate recipes={recipes} addRecipes={addRecipes} />
     </div>
   );
 }
